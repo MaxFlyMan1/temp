@@ -1,3 +1,36 @@
+function whichBrowser() {
+  if (isFirefox()) {
+    return "firefox";
+  } else if (isChrome()) {
+    return "chrome";
+  } else {
+    return "idfk";
+  }
+}
+  
+function agentHas(keyword) {
+  return navigator.userAgent.toLowerCase().search(keyword.toLowerCase()) > -1;
+}
+  
+function isChrome() {
+  return agentHas("CriOS") || agentHas("Chrome") || !!window.chrome;
+}
+  
+function isFirefox() {
+  return agentHas("Firefox") || agentHas("FxiOS") || agentHas("Focus");
+}
+
+function fixbuttons() {
+  if (whichBrowser() == "firefox"){
+    button = document.getElementsByClassName("button")
+    for (let i = 0; i < button.length; i++) {
+      button[i].style.width = "24.4%"
+    }
+  }
+}
+
+window.onload = fixbuttons()
+
 function yt() {
   window.open("https://www.youtube.com/@maxflyman171", '_blank');
 }
@@ -29,7 +62,6 @@ function spot() {
 function cash() {
   window.open("https://cash.app/$MaxFlyMan", '_blank');
 }
-
 
 function meow() {
   meowsound = new Audio("../media/audio/meow.wav");
