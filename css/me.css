@@ -1,5 +1,5 @@
 @font-face { font-family: Willkids; src: url(../media/font/Willkids.ttf); } 
-@font-face { font-family: HELP; src: url(../media/font/HELP.ttf); } 
+
 
 @keyframes zoom {
     0% {width: 500px;}
@@ -92,14 +92,7 @@ p4 {
 } 
 
 #buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
     display: table;
-    table-layout: fixed;
-
 }
 
 .button {
@@ -113,6 +106,13 @@ p4 {
     padding: 6px;
     width: 25%;
 }
+  
+@-moz-document url-prefix() {
+    .button {
+        width: 24.45%;
+    }
+}
+  
 
 #kitty {
     width: 50px;
