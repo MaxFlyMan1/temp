@@ -12,6 +12,8 @@ function backzoom(){
 
 function start(){
     setInterval(backzoom, 1)
+    music = new Audio("../media/audio/void.mp3");
+    music.play()
 }
 
 window.onload = start
